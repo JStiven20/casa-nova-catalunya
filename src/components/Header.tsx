@@ -143,7 +143,7 @@ const Header = ({ language, setLanguage, content }: HeaderProps) => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-32 pb-24 bg-gradient-to-br from-light-gray via-white to-light-gray">
+      <section id="home" className="pt-48 pb-24 bg-gradient-to-br from-light-gray via-white to-light-gray">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8 animate-fade-in">
@@ -151,7 +151,7 @@ const Header = ({ language, setLanguage, content }: HeaderProps) => {
                 <div className="inline-flex items-center px-4 py-2 bg-accent-blue/10 text-accent-blue rounded-full text-sm font-medium">
                   ✨ Transformamos hogares en Cataluña
                 </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-dark-navy font-inter leading-tight">
+                <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-dark-navy font-inter leading-tight">
                   {content.hero.title}
                   <span className="block bg-gradient-to-r from-accent-blue to-accent-purple bg-clip-text text-transparent mt-2">
                     {content.hero.subtitle}
