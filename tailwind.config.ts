@@ -63,13 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Novacasa Brand Colors
-				'steel-blue': '#3A6D9B',
-				'off-white': '#F7F7F5', 
-				'vibrant-orange': '#F28C28',
-				'dark-charcoal': '#333333',
-				'warm-wood': '#8B6F4E',
-				'olive-green': '#6B8E23'
+				// Modern Color Palette
+				'dark-navy': '#0F172A',
+				'light-gray': '#F8FAFC',
+				'medium-gray': '#64748B',
+				'accent-blue': '#3B82F6',
+				'accent-purple': '#8B5CF6',
+				'accent-green': '#10B981',
+				'warm-orange': '#F59E0B'
 			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
@@ -101,7 +102,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -117,13 +118,24 @@ export default {
 						transform: 'scale(1)',
 						opacity: '1'
 					}
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(100px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out'
+				'fade-in': 'fade-in 0.8s ease-out',
+				'scale-in': 'scale-in 0.6s ease-out',
+				'slide-up': 'slide-up 0.8s ease-out'
 			}
 		}
 	},
