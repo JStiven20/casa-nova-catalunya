@@ -32,14 +32,14 @@ const SocialMediaLinks = ({ className = "", size = "md" }: SocialMediaLinksProps
   ];
 
   return (
-    <div className={`flex space-x-3 ${className}`}>
+    <div className={`flex space-x-2 ${className}`}>
       {socialLinks.map((social) => (
         <a
           key={social.name}
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${buttonSize} ${iconSize} bg-steel-blue text-white rounded-full transition-all duration-300 ${social.color} hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-steel-blue`}
+          className={`${buttonSize} bg-gray-100 text-gray-600 rounded-full transition-all duration-300 ${social.color} hover:text-white hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-steel-blue`}
           aria-label={`Síguenos en ${social.name}`}
         >
           <social.icon className={iconSize} />

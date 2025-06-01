@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,6 +18,7 @@ import {
 } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
+import Header from "@/components/Header";
 
 const Index = () => {
   const [language, setLanguage] = useState("es");
@@ -315,70 +315,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-steel-blue">Novacasa</div>
-          
-          <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-dark-charcoal hover:text-steel-blue transition-colors">
-              {currentContent.nav.home}
-            </a>
-            <a href="#services" className="text-dark-charcoal hover:text-steel-blue transition-colors">
-              {currentContent.nav.services}
-            </a>
-            <a href="#about" className="text-dark-charcoal hover:text-steel-blue transition-colors">
-              {currentContent.nav.about}
-            </a>
-            <a href="#contact" className="text-dark-charcoal hover:text-steel-blue transition-colors">
-              {currentContent.nav.contact}
-            </a>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <select 
-              value={language} 
-              onChange={(e) => setLanguage(e.target.value)}
-              className="bg-transparent border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-steel-blue"
-            >
-              <option value="es">ES</option>
-              <option value="ca">CA</option>
-              <option value="en">EN</option>
-            </select>
-            <Globe className="h-4 w-4 text-steel-blue" />
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="pt-20 pb-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-dark-charcoal mb-6 animate-fade-in">
-              {currentContent.hero.title}
-              <span className="block text-steel-blue">{currentContent.hero.subtitle}</span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 animate-fade-in">
-              {currentContent.hero.description}
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-vibrant-orange hover:bg-orange-600 text-white px-8 py-3 text-lg rounded-full animate-scale-in"
-            >
-              {currentContent.hero.cta}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Header language={language} setLanguage={setLanguage} content={currentContent} />
 
       {/* Services Section */}
-      <section id="services" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4">
+      <section id="services" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4 font-raleway">
               {currentContent.services.title}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 font-inter">
               {currentContent.services.subtitle}
             </p>
           </div>
@@ -388,10 +334,10 @@ const Index = () => {
               <Card key={index} className="bg-white hover:shadow-lg transition-shadow duration-300 hover-scale">
                 <CardHeader className="text-center">
                   <service.icon className="h-12 w-12 text-steel-blue mx-auto mb-4" />
-                  <CardTitle className="text-xl text-dark-charcoal">{service.title}</CardTitle>
+                  <CardTitle className="text-xl text-dark-charcoal font-raleway">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600 text-center">
+                  <CardDescription className="text-gray-600 text-center font-inter">
                     {service.description}
                   </CardDescription>
                 </CardContent>
@@ -402,13 +348,13 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4 font-raleway">
               {currentContent.about.title}
             </h2>
-            <p className="text-xl text-gray-600 mb-12">
+            <p className="text-xl text-gray-600 mb-16 font-inter">
               {currentContent.about.subtitle}
             </p>
 
@@ -416,7 +362,7 @@ const Index = () => {
               {currentContent.about.features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="h-6 w-6 text-olive-green flex-shrink-0" />
-                  <span className="text-lg text-dark-charcoal">{feature}</span>
+                  <span className="text-lg text-dark-charcoal font-inter">{feature}</span>
                 </div>
               ))}
             </div>
@@ -425,10 +371,10 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4 font-raleway">
               {currentContent.testimonials.title}
             </h2>
           </div>
@@ -442,10 +388,10 @@ const Index = () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
+                  <p className="text-gray-600 mb-4 italic font-inter">"{testimonial.text}"</p>
                   <div>
-                    <p className="font-semibold text-dark-charcoal">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.city}</p>
+                    <p className="font-semibold text-dark-charcoal font-raleway">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500 font-inter">{testimonial.city}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -455,14 +401,14 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="py-20 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-dark-charcoal mb-4 font-raleway">
                 {currentContent.contact.title}
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 font-inter">
                 {currentContent.contact.subtitle}
               </p>
             </div>
@@ -471,14 +417,14 @@ const Index = () => {
               {/* Contact Form */}
               <Card className="bg-white">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dark-charcoal">
+                  <CardTitle className="text-2xl text-dark-charcoal font-raleway">
                     {currentContent.contact.form.submit}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <Label htmlFor="name">{currentContent.contact.form.name}</Label>
+                      <Label htmlFor="name" className="font-raleway">{currentContent.contact.form.name}</Label>
                       <Input
                         id="name"
                         name="name"
@@ -490,7 +436,7 @@ const Index = () => {
                     </div>
                     
                     <div>
-                      <Label htmlFor="email">{currentContent.contact.form.email}</Label>
+                      <Label htmlFor="email" className="font-raleway">{currentContent.contact.form.email}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -503,7 +449,7 @@ const Index = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="phone">{currentContent.contact.form.phone}</Label>
+                      <Label htmlFor="phone" className="font-raleway">{currentContent.contact.form.phone}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -514,13 +460,13 @@ const Index = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="city">{currentContent.contact.form.city}</Label>
+                      <Label htmlFor="city" className="font-raleway">{currentContent.contact.form.city}</Label>
                       <select
                         id="city"
                         name="city"
                         value={formData.city}
                         onChange={handleInputChange}
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-steel-blue"
+                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-steel-blue font-inter"
                       >
                         <option value="">Selecciona tu ciudad</option>
                         <option value="barcelona">Barcelona</option>
@@ -531,13 +477,13 @@ const Index = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="service">{currentContent.contact.form.service}</Label>
+                      <Label htmlFor="service" className="font-raleway">{currentContent.contact.form.service}</Label>
                       <select
                         id="service"
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-steel-blue"
+                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-steel-blue font-inter"
                       >
                         <option value="">Selecciona un servicio</option>
                         <option value="reforma-integral">Reforma Integral</option>
@@ -548,20 +494,20 @@ const Index = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="message">{currentContent.contact.form.message}</Label>
+                      <Label htmlFor="message" className="font-raleway">{currentContent.contact.form.message}</Label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={4}
-                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-steel-blue"
+                        className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-steel-blue font-inter"
                       />
                     </div>
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-vibrant-orange hover:bg-orange-600 text-white py-3 rounded-full"
+                      className="w-full bg-vibrant-orange hover:bg-orange-600 text-white py-3 rounded-full font-raleway font-semibold"
                     >
                       {currentContent.contact.form.submit}
                     </Button>
@@ -572,40 +518,40 @@ const Index = () => {
               {/* Contact Info */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-dark-charcoal mb-4">
+                  <h3 className="text-xl font-semibold text-dark-charcoal mb-4 font-raleway">
                     {currentContent.footer.contact}
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <Phone className="h-5 w-5 text-steel-blue" />
-                      <span className="text-gray-600">+34 XXX XXX XXX</span>
+                      <span className="text-gray-600 font-inter">+34 XXX XXX XXX</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <Mail className="h-5 w-5 text-steel-blue" />
-                      <span className="text-gray-600">info@novacasa.cat</span>
+                      <span className="text-gray-600 font-inter">info@novacasa.cat</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <MapPin className="h-5 w-5 text-steel-blue" />
-                      <span className="text-gray-600">Cataluña, España</span>
+                      <span className="text-gray-600 font-inter">Cataluña, España</span>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-dark-charcoal mb-4">
+                  <h3 className="text-xl font-semibold text-dark-charcoal mb-4 font-raleway">
                     {currentContent.footer.follow}
                   </h3>
                   <SocialMediaLinks size="lg" />
                 </div>
 
                 <div className="bg-steel-blue/10 p-6 rounded-lg">
-                  <h4 className="font-semibold text-dark-charcoal mb-2">
+                  <h4 className="font-semibold text-dark-charcoal mb-2 font-raleway">
                     ¿Necesitas asesoramiento inmediato?
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 font-inter">
                     Nuestro equipo está disponible para resolver tus dudas por WhatsApp.
                   </p>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                  <Badge variant="secondary" className="bg-green-100 text-green-800 font-raleway">
                     Respuesta en menos de 1 hora
                   </Badge>
                 </div>
@@ -616,20 +562,20 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-dark-charcoal text-white py-12">
-        <div className="container mx-auto px-4">
+      <footer className="bg-dark-charcoal text-white py-16">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Novacasa</h3>
-              <p className="text-gray-300 mb-6">
+              <h3 className="text-2xl font-bold text-white mb-4 font-raleway">Novacasa</h3>
+              <p className="text-gray-300 mb-6 font-inter">
                 {currentContent.footer.description}
               </p>
               <SocialMediaLinks />
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Servicios</h4>
-              <ul className="space-y-2 text-gray-300">
+              <h4 className="text-lg font-semibold text-white mb-4 font-raleway">Servicios</h4>
+              <ul className="space-y-2 text-gray-300 font-inter">
                 <li>Reformas Integrales</li>
                 <li>Placas Solares</li>
                 <li>Eficiencia Energética</li>
@@ -638,8 +584,8 @@ const Index = () => {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Zonas de Actuación</h4>
-              <ul className="space-y-2 text-gray-300">
+              <h4 className="text-lg font-semibold text-white mb-4 font-raleway">Zonas de Actuación</h4>
+              <ul className="space-y-2 text-gray-300 font-inter">
                 <li>Barcelona</li>
                 <li>Girona</li>
                 <li>Tarragona</li>
@@ -649,7 +595,7 @@ const Index = () => {
           </div>
 
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p className="text-gray-400">
+            <p className="text-gray-400 font-inter">
               © 2024 Novacasa. Todos los derechos reservados.
             </p>
           </div>

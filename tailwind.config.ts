@@ -73,6 +73,7 @@ export default {
 			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
+				'raleway': ['Raleway', 'sans-serif'],
 				'playfair': ['Playfair Display', 'serif'],
 			},
 			borderRadius: {
