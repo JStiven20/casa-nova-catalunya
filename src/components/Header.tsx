@@ -143,7 +143,7 @@ const Header = ({ language, setLanguage, content }: HeaderProps) => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-32 pb-24 bg-gradient-to-br from-light-gray via-white to-light-gray">
+      <section id="home" className="pt-36 pb-20 bg-gradient-to-br from-light-gray via-white to-light-gray">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-8 animate-fade-in">
@@ -151,9 +151,9 @@ const Header = ({ language, setLanguage, content }: HeaderProps) => {
                 <div className="inline-flex items-center px-4 py-2 bg-accent-blue/10 text-accent-blue rounded-full text-sm font-medium">
                   ✨ Transformamos hogares en Cataluña
                 </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-dark-navy font-inter leading-tight">
+                <h1 className="text-4xl md:text-3xl lg:text-6xl font-bold text-dark-navy font-inter leading-tight">
                   {content.hero.title}
-                  <span className="block bg-gradient-to-r from-accent-blue to-accent-purple bg-clip-text text-transparent mt-2">
+                  <span className="block bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent mt-7">
                     {content.hero.subtitle}
                   </span>
                 </h1>
@@ -162,14 +162,17 @@ const Header = ({ language, setLanguage, content }: HeaderProps) => {
                 </p>
               </div>
               
-              <div className="pt-8">
-                <Button 
-                  size="lg" 
-                  className="bg-accent-blue hover:bg-accent-blue/90 text-white px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-accent-blue/25 group"
-                >
-                  {content.hero.cta}
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+              <div className="pt-9">
+                <a href="#contact">
+                  <Button
+                    size="lg"
+                    className="bg-accent-blue hover:bg-accent-blue/90 text-white px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-accent-blue/25 group"
+                  >
+                    {content.hero.cta}
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+
               </div>
             </div>
           </div>

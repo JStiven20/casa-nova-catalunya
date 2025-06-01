@@ -68,11 +68,6 @@ const Index = () => {
             title: "Eficiencia Energética",
             description: "Aislamiento, ventanas eficientes y climatización inteligente"
           },
-          {
-            icon: Smartphone,
-            title: "Domótica",
-            description: "Automatización del hogar y control remoto inteligente"
-          }
         ]
       },
       about: {
@@ -336,7 +331,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentContent.services.items.map((service, index) => (
               <Card key={index} className="bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg group animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardHeader className="text-center pb-4">
@@ -536,11 +531,11 @@ const Index = () => {
                       onChange={handleInputChange}
                       className="w-full mt-2 px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue/20 focus:border-accent-blue font-inter"
                     >
-                      <option value="">Selecciona un servicio</option>
+                      <option value="jnjnjnj">Selecciona un servicio</option>
                       <option value="reforma-integral">Reforma Integral</option>
                       <option value="placas-solares">Placas Solares</option>
                       <option value="eficiencia-energetica">Eficiencia Energética</option>
-                      <option value="domotica">Domótica</option>
+                     {/*<option value="domotica">Domótica</option>*/}
                     </select>
                   </div>
 
@@ -636,7 +631,6 @@ const Index = () => {
                 <li className="hover:text-white transition-colors cursor-pointer">Reformas Integrales</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Placas Solares</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Eficiencia Energética</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Domótica</li>
               </ul>
             </div>
 
