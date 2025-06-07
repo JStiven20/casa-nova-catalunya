@@ -48,7 +48,7 @@ const Index = () => {
         contact: "Contacto"
       },
       hero: {
-        title: "Especialistas en Reformas Integrales y",
+        title: "Especialistas en Reformas Integrales e",
         subtitle: "Instalación de Energía Solar",
         description: "Transformamos tu hogar con reformas completas, instalación de placas solares, pladur, parquet y pintura. Más de 10 años de experiencia en Cataluña con garantía total.",
         cta: "Solicita tu presupuesto gratuito"
