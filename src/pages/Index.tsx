@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,7 +19,10 @@ import {
   Shield,
   Users,
   Lightbulb,
-  Target
+  Target,
+  Hammer,
+  PaintBucket,
+  TreePine
 } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
@@ -44,40 +48,49 @@ const Index = () => {
         contact: "Contacto"
       },
       hero: {
-        title: "Transformamos tu hogar con",
-        subtitle: "Reformas y Energía Solar",
-        description: "Nos encargamos de todo, desde el diseño hasta el último detalle. Con Novacasa, transformar tu casa es más fácil de lo que imaginas.",
-        cta: "Empieza hoy tu reforma"
+        title: "Especialistas en Reformas Integrales y",
+        subtitle: "Instalación de Energía Solar",
+        description: "Transformamos tu hogar con reformas completas, instalación de placas solares, pladur, parquet y pintura. Más de 10 años de experiencia en Cataluña con garantía total.",
+        cta: "Solicita tu presupuesto gratuito"
       },
       services: {
-        title: "Nuestros Servicios",
-        subtitle: "Soluciones completas para tu hogar",
+        title: "Nuestros Servicios Especializados",
+        subtitle: "Soluciones profesionales para tu hogar y negocio",
         items: [
           {
-            icon: Home,
-            title: "Reformas Integrales",
-            description: "Cocinas, baños, suelos, pintura y diseño interior completo"
-          },
-          {
             icon: Zap,
-            title: "Instalación Solar",
-            description: "Placas solares residenciales y comerciales para autoconsumo"
+            title: "Instalación y Mantenimiento de Placas Solares",
+            description: "Instalación profesional de paneles solares fotovoltaicos. Mantenimiento preventivo y correctivo. Ahorra hasta 70% en tu factura eléctrica con autoconsumo."
           },
           {
-            icon: Thermometer,
-            title: "Eficiencia Energética",
-            description: "Aislamiento, ventanas eficientes y climatización inteligente"
+            icon: Home,
+            title: "Instalación de Pladur (Drywall)",
+            description: "Tabiques, techos y trasdosados con pladur. Material ligero, aislante térmico y acústico. Instalación rápida y acabados perfectos."
           },
+          {
+            icon: TreePine,
+            title: "Instalación, Pulido y Barnizado de Parquet",
+            description: "Instalación de parquet flotante y macizo. Pulido y barnizado profesional. Restauración de suelos de madera con acabados de alta calidad."
+          },
+          {
+            icon: PaintBucket,
+            title: "Reformas Integrales y Pintura",
+            description: "Reformas completas de apartamentos, casas y locales comerciales. Pintura interior y exterior, albañilería, fontanería y electricidad."
+          }
         ]
       },
       about: {
-        title: "¿Por qué elegir Novacasa?",
-        subtitle: "Más de 10 años transformando hogares en Cataluña",
+        title: "¿Por qué elegir Novacasa para tu reforma?",
+        subtitle: "Más de 10 años especializados en reformas y energía solar en Cataluña",
         features: [
-          "Gestión integral de proyectos",
-          "Equipo de profesionales certificados",
-          "Garantía en todos nuestros trabajos",
-          "Financiación personalizada disponible"
+          "Instaladores certificados de placas solares",
+          "Especialistas en pladur con acabados perfectos",
+          "Maestros en instalación y restauración de parquet",
+          "Equipo completo para reformas integrales",
+          "Presupuestos detallados sin sorpresas",
+          "Garantía de 5 años en instalaciones solares",
+          "Financiación personalizada disponible",
+          "Servicio post-venta y mantenimiento"
         ]
       },
       testimonials: {
@@ -86,35 +99,38 @@ const Index = () => {
           {
             name: "Maria García",
             city: "Barcelona",
-            text: "Increíble trabajo en nuestra cocina. El equipo fue muy profesional y el resultado superó nuestras expectativas."
+            service: "Placas Solares",
+            text: "Instalaron 12 paneles solares en mi casa. El ahorro en la factura eléctrica ha sido increíble, ya recuperé la inversión."
           },
           {
             name: "Josep Martínez", 
             city: "Girona",
-            text: "Las placas solares que instalaron nos han ayudado a ahorrar más del 60% en la factura eléctrica."
+            service: "Pladur y Pintura",
+            text: "Hicieron toda la tabiquería de pladur de mi oficina. Trabajo impecable, rápido y con excelentes acabados."
           },
           {
             name: "Anna López",
-            city: "Tarragona", 
-            text: "Reforma completa del baño en tiempo récord. Muy satisfechos con el resultado y la atención."
+            city: "Tarragona",
+            service: "Parquet", 
+            text: "Restauraron el parquet de toda mi casa. Quedó como nuevo, el pulido y barnizado perfecto. Muy profesionales."
           }
         ]
       },
       contact: {
-        title: "¿Quieres renovar tu hogar?",
-        subtitle: "Estamos aquí para ayudarte",
+        title: "¿Necesitas una reforma o instalación solar?",
+        subtitle: "Solicita tu presupuesto gratuito sin compromiso",
         form: {
           name: "Nombre completo",
           email: "Email",
           phone: "Teléfono",
           city: "Ciudad",
           service: "Servicio solicitado",
-          message: "Mensaje",
+          message: "Detalles del proyecto",
           submit: "Solicitar presupuesto gratuito"
         }
       },
       footer: {
-        description: "Transformamos hogares con reformas sostenibles y energía solar en toda Cataluña.",
+        description: "Especialistas en reformas integrales, instalación de placas solares, pladur, parquet y pintura en toda Cataluña. Calidad garantizada.",
         contact: "Contacto",
         follow: "Síguenos"
       }
@@ -127,45 +143,49 @@ const Index = () => {
         contact: "Contacte"
       },
       hero: {
-        title: "Transformem la teva llar amb",
-        subtitle: "Reformes i Energia Solar",
-        description: "Ens encarreguem de tot, des del disseny fins a l'últim detall. Amb Novacasa, transformar casa teva és més fàcil del que t'imagines.",
-        cta: "Comença avui la teva reforma"
+        title: "Especialistes en Reformes Integrals i",
+        subtitle: "Instal·lació d'Energia Solar",
+        description: "Transformem la teva llar amb reformes completes, instal·lació de plaques solars, pladur, parquet i pintura. Més de 10 anys d'experiència a Catalunya amb garantia total.",
+        cta: "Sol·licita el teu pressupost gratuït"
       },
       services: {
-        title: "Els Nostres Serveis",
-        subtitle: "Solucions completes per a la teva llar",
+        title: "Els Nostres Serveis Especialitzats",
+        subtitle: "Solucions professionals per a la teva llar i negoci",
         items: [
           {
-            icon: Home,
-            title: "Reformes Integrals",
-            description: "Cuines, banys, terres, pintura i disseny interior complet"
-          },
-          {
             icon: Zap,
-            title: "Instal·lació Solar",
-            description: "Plaques solars residencials i comercials per autoconsum"
+            title: "Instal·lació i Manteniment de Plaques Solars",
+            description: "Instal·lació professional de panells solars fotovoltaics. Manteniment preventiu i correctiu. Estalvia fins al 70% en la factura elèctrica."
           },
           {
-            icon: Thermometer,
-            title: "Eficiència Energètica",
-            description: "Aïllament, finestres eficients i climatització intel·ligent"
+            icon: Home,
+            title: "Instal·lació de Pladur (Drywall)",
+            description: "Envans, sostres i trasdossats amb pladur. Material lleuger, aïllant tèrmic i acústic. Instal·lació ràpida i acabats perfectes."
           },
           {
-            icon: Smartphone,
-            title: "Domòtica",
-            description: "Automatització de la llar i control remot intel·ligent"
+            icon: TreePine,
+            title: "Instal·lació, Poliment i Vernís de Parquet",
+            description: "Instal·lació de parquet flotant i massís. Poliment i vernís professional. Restauració de sòls de fusta amb acabats d'alta qualitat."
+          },
+          {
+            icon: PaintBucket,
+            title: "Reformes Integrals i Pintura",
+            description: "Reformes completes d'apartaments, cases i locals comercials. Pintura interior i exterior, paleta, fontaneria i electricitat."
           }
         ]
       },
       about: {
-        title: "Per què triar Novacasa?",
-        subtitle: "Més de 10 anys transformant llars a Catalunya",
+        title: "Per què triar Novacasa per a la teva reforma?",
+        subtitle: "Més de 10 anys especialitzats en reformes i energia solar a Catalunya",
         features: [
-          "Gestió integral de projectes",
-          "Equip de professionals certificats",
-          "Garantia en tots els nostres treballs",
-          "Finançament personalitzat disponible"
+          "Instal·ladors certificats de plaques solars",
+          "Especialistes en pladur amb acabats perfectes",
+          "Mestres en instal·lació i restauració de parquet",
+          "Equip complet per a reformes integrals",
+          "Pressupostos detallats sense sorpreses",
+          "Garantia de 5 anys en instal·lacions solars",
+          "Finançament personalitzat disponible",
+          "Servei post-venda i manteniment"
         ]
       },
       testimonials: {
@@ -174,35 +194,38 @@ const Index = () => {
           {
             name: "Maria García",
             city: "Barcelona",
-            text: "Increïble treball a la nostra cuina. L'equip va ser molt professional i el resultat va superar les nostres expectatives."
+            service: "Plaques Solars",
+            text: "Van instal·lar 12 panells solars a casa meva. L'estalvi en la factura elèctrica ha estat increïble, ja vaig recuperar la inversió."
           },
           {
             name: "Josep Martínez",
-            city: "Girona", 
-            text: "Les plaques solars que van instal·lar ens han ajudat a estalviar més del 60% en la factura elèctrica."
+            city: "Girona",
+            service: "Pladur i Pintura", 
+            text: "Van fer tota l'envanseria de pladur de la meva oficina. Treball impecable, ràpid i amb excel·lents acabats."
           },
           {
             name: "Anna López",
             city: "Tarragona",
-            text: "Reforma completa del bany en temps rècord. Molt satisfets amb el resultat i l'atenció."
+            service: "Parquet",
+            text: "Van restaurar el parquet de tota casa meva. Va quedar com nou, el poliment i vernís perfecte. Molt professionals."
           }
         ]
       },
       contact: {
-        title: "Vols renovar la teva llar?",
-        subtitle: "Som aquí per ajudar-te",
+        title: "Necessites una reforma o instal·lació solar?",
+        subtitle: "Sol·licita el teu pressupost gratuït sense compromís",
         form: {
           name: "Nom complet",
           email: "Email",
           phone: "Telèfon", 
           city: "Ciutat",
           service: "Servei sol·licitat",
-          message: "Missatge",
+          message: "Detalls del projecte",
           submit: "Sol·licitar pressupost gratuït"
         }
       },
       footer: {
-        description: "Transformem llars amb reformes sostenibles i energia solar a tota Catalunya.",
+        description: "Especialistes en reformes integrals, instal·lació de plaques solars, pladur, parquet i pintura a tota Catalunya. Qualitat garantida.",
         contact: "Contacte",
         follow: "Segueix-nos"
       }
@@ -215,45 +238,49 @@ const Index = () => {
         contact: "Contact"
       },
       hero: {
-        title: "Transform your home with",
-        subtitle: "Renovations and Solar Energy",
-        description: "We take care of everything, from design to the last detail. With Novacasa, transforming your home is easier than you imagine.",
-        cta: "Start your renovation today"
+        title: "Specialists in Complete Renovations and",
+        subtitle: "Solar Energy Installation",
+        description: "We transform your home with complete renovations, solar panel installation, drywall, parquet and painting. Over 10 years of experience in Catalonia with full warranty.",
+        cta: "Request your free quote"
       },
       services: {
-        title: "Our Services",
-        subtitle: "Complete solutions for your home",
+        title: "Our Specialized Services",
+        subtitle: "Professional solutions for your home and business",
         items: [
           {
-            icon: Home,
-            title: "Full Renovations",
-            description: "Kitchens, bathrooms, flooring, painting and complete interior design"
-          },
-          {
             icon: Zap,
-            title: "Solar Installation", 
-            description: "Residential and commercial solar panels for self-consumption"
+            title: "Solar Panel Installation and Maintenance", 
+            description: "Professional installation of photovoltaic solar panels. Preventive and corrective maintenance. Save up to 70% on your electricity bill with self-consumption."
           },
           {
-            icon: Thermometer,
-            title: "Energy Efficiency",
-            description: "Insulation, efficient windows and smart climate control"
+            icon: Home,
+            title: "Drywall (Pladur) Installation",
+            description: "Partition walls, ceilings and cladding with drywall. Lightweight material, thermal and acoustic insulation. Fast installation and perfect finishes."
           },
           {
-            icon: Smartphone,
-            title: "Home Automation",
-            description: "Home automation and intelligent remote control"
+            icon: TreePine,
+            title: "Parquet Installation, Sanding and Varnishing",
+            description: "Installation of floating and solid parquet. Professional sanding and varnishing. Wooden floor restoration with high quality finishes."
+          },
+          {
+            icon: PaintBucket,
+            title: "Complete Renovations and Painting",
+            description: "Complete renovations of apartments, houses and commercial premises. Interior and exterior painting, masonry, plumbing and electrical work."
           }
         ]
       },
       about: {
-        title: "Why choose Novacasa?",
-        subtitle: "Over 10 years transforming homes in Catalonia",
+        title: "Why choose Novacasa for your renovation?",
+        subtitle: "Over 10 years specialized in renovations and solar energy in Catalonia",
         features: [
-          "Comprehensive project management",
-          "Team of certified professionals", 
-          "Warranty on all our work",
-          "Personalized financing available"
+          "Certified solar panel installers",
+          "Drywall specialists with perfect finishes", 
+          "Masters in parquet installation and restoration",
+          "Complete team for integral renovations",
+          "Detailed budgets without surprises",
+          "5-year warranty on solar installations",
+          "Personalized financing available",
+          "After-sales service and maintenance"
         ]
       },
       testimonials: {
@@ -262,35 +289,38 @@ const Index = () => {
           {
             name: "Maria García",
             city: "Barcelona",
-            text: "Amazing work on our kitchen. The team was very professional and the result exceeded our expectations."
+            service: "Solar Panels",
+            text: "They installed 12 solar panels in my house. The savings on the electricity bill have been incredible, I already recovered the investment."
           },
           {
             name: "Josep Martínez",
             city: "Girona",
-            text: "The solar panels they installed have helped us save more than 60% on our electricity bill."
+            service: "Drywall and Painting",
+            text: "They did all the drywall partitioning in my office. Impeccable work, fast and with excellent finishes."
           },
           {
             name: "Anna López", 
             city: "Tarragona",
-            text: "Complete bathroom renovation in record time. Very satisfied with the result and attention."
+            service: "Parquet",
+            text: "They restored the parquet throughout my house. It looked like new, the sanding and varnishing perfect. Very professional."
           }
         ]
       },
       contact: {
-        title: "Want to renovate your home?",
-        subtitle: "We're here to help you",
+        title: "Need a renovation or solar installation?",
+        subtitle: "Request your free quote without commitment",
         form: {
           name: "Full name",
           email: "Email",
           phone: "Phone",
           city: "City", 
           service: "Requested service",
-          message: "Message",
+          message: "Project details",
           submit: "Request free quote"
         }
       },
       footer: {
-        description: "We transform homes with sustainable renovations and solar energy throughout Catalonia.",
+        description: "Specialists in complete renovations, solar panel installation, drywall, parquet and painting throughout Catalonia. Guaranteed quality.",
         contact: "Contact",
         follow: "Follow us"
       }
@@ -320,8 +350,8 @@ const Index = () => {
       <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20 animate-fade-in">
-            <Badge variant="secondary" className="mb-4 bg-accent-purple/10 text-accent-purple border-0">
-              Servicios Especializados
+            <Badge variant="secondary" className="mb-4 bg-accent-blue/10 text-accent-blue border-0">
+              Servicios Profesionales
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-dark-navy mb-6 font-inter">
               {currentContent.services.title}
@@ -331,7 +361,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {currentContent.services.items.map((service, index) => (
               <Card key={index} className="bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg group animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardHeader className="text-center pb-4">
@@ -366,13 +396,13 @@ const Index = () => {
                 {currentContent.about.subtitle}
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-1 gap-4">
                 {currentContent.about.features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3 animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                  <div key={index} className="flex items-start space-x-3 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle className="h-6 w-6 text-accent-green" />
+                      <CheckCircle className="h-5 w-5 text-accent-green" />
                     </div>
-                    <span className="text-dark-navy font-inter font-medium">{feature}</span>
+                    <span className="text-dark-navy font-inter font-medium text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -385,7 +415,7 @@ const Index = () => {
                   <div className="text-medium-gray">Años de experiencia</div>
                 </div>
                 <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
-                  <div className="text-3xl font-bold text-accent-purple mb-2">500+</div>
+                  <div className="text-3xl font-bold text-accent-purple mb-2">800+</div>
                   <div className="text-medium-gray">Proyectos completados</div>
                 </div>
                 <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
@@ -393,8 +423,8 @@ const Index = () => {
                   <div className="text-medium-gray">Clientes satisfechos</div>
                 </div>
                 <div className="bg-white p-6 rounded-2xl shadow-lg text-center">
-                  <div className="text-3xl font-bold text-warm-orange mb-2">24/7</div>
-                  <div className="text-medium-gray">Soporte técnico</div>
+                  <div className="text-3xl font-bold text-warm-orange mb-2">5</div>
+                  <div className="text-medium-gray">Años de garantía</div>
                 </div>
               </div>
             </div>
@@ -431,6 +461,9 @@ const Index = () => {
                     <div>
                       <p className="font-bold text-dark-navy font-inter">{testimonial.name}</p>
                       <p className="text-sm text-medium-gray font-inter">{testimonial.city}</p>
+                      <Badge variant="secondary" className="mt-1 text-xs bg-accent-blue/10 text-accent-blue border-0">
+                        {testimonial.service}
+                      </Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -531,11 +564,13 @@ const Index = () => {
                       onChange={handleInputChange}
                       className="w-full mt-2 px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue/20 focus:border-accent-blue font-inter"
                     >
-                      <option value="jnjnjnj">Selecciona un servicio</option>
+                      <option value="">Selecciona un servicio</option>
+                      <option value="placas-solares">Instalación de Placas Solares</option>
+                      <option value="pladur">Instalación de Pladur</option>
+                      <option value="parquet">Instalación de Parquet</option>
                       <option value="reforma-integral">Reforma Integral</option>
-                      <option value="placas-solares">Placas Solares</option>
-                      <option value="eficiencia-energetica">Eficiencia Energética</option>
-                     {/*<option value="domotica">Domótica</option>*/}
+                      <option value="pintura">Pintura</option>
+                      <option value="mantenimiento">Mantenimiento</option>
                     </select>
                   </div>
 
@@ -548,6 +583,7 @@ const Index = () => {
                       onChange={handleInputChange}
                       rows={4}
                       className="w-full mt-2 px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-accent-blue/20 focus:border-accent-blue font-inter"
+                      placeholder="Describe tu proyecto: metros cuadrados, tipo de trabajo, fechas estimadas..."
                     />
                   </div>
 
@@ -595,7 +631,7 @@ const Index = () => {
                   ¿Necesitas asesoramiento inmediato?
                 </h4>
                 <p className="text-medium-gray mb-6 font-inter leading-relaxed">
-                  Nuestro equipo está disponible para resolver tus dudas por WhatsApp.
+                  Nuestro equipo especializado está disponible para resolver tus dudas sobre placas solares, pladur, parquet y reformas.
                 </p>
                 <Badge className="bg-accent-green/10 text-accent-green border-0 font-inter">
                   ⚡ Respuesta en menos de 1 hora
@@ -628,14 +664,16 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-bold text-white mb-6 font-inter">Servicios</h4>
               <ul className="space-y-3 text-gray-300 font-inter">
-                <li className="hover:text-white transition-colors cursor-pointer">Reformas Integrales</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Placas Solares</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Eficiencia Energética</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Instalación Pladur</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Parquet</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Reformas Integrales</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Pintura</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-white mb-6 font-inter">Zonas</h4>
+              <h4 className="text-lg font-bold text-white mb-6 font-inter">Zonas de Servicio</h4>
               <ul className="space-y-3 text-gray-300 font-inter">
                 <li className="hover:text-white transition-colors cursor-pointer">Barcelona</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Girona</li>
@@ -647,7 +685,7 @@ const Index = () => {
 
           <div className="border-t border-gray-700 mt-12 pt-8 text-center">
             <p className="text-gray-400 font-inter">
-              © 2024 Novacasa. Todos los derechos reservados.
+              © 2024 Novacasa. Todos los derechos reservados. Especialistas en reformas, placas solares, pladur y parquet en Cataluña.
             </p>
           </div>
         </div>
