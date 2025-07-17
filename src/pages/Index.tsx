@@ -24,6 +24,10 @@ import {
   PaintBucket,
   TreePine
 } from "lucide-react";
+import solarInstallationImg from "@/assets/solar-installation.jpg";
+import drywallInstallationImg from "@/assets/drywall-installation.jpg";
+import parquetInstallationImg from "@/assets/parquet-installation.jpg";
+import homeRenovationImg from "@/assets/home-renovation.jpg";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import Header from "@/components/Header";
@@ -80,7 +84,7 @@ const Index = () => {
         ]
       },
       about: {
-        title: "¿Por qué elegir Novacasa para tu reforma?",
+        title: "¿Por qué elegir Espaireforma para tu reforma?",
         subtitle: "Más de 10 años especializados en reformas y energía solar en Cataluña",
         features: [
           "Instaladores certificados de placas solares",
@@ -175,7 +179,7 @@ const Index = () => {
         ]
       },
       about: {
-        title: "Per què triar Novacasa per a la teva reforma?",
+        title: "Per què triar Espaireforma per a la teva reforma?",
         subtitle: "Més de 10 anys especialitzats en reformes i energia solar a Catalunya",
         features: [
           "Instal·ladors certificats de plaques solars",
@@ -270,7 +274,7 @@ const Index = () => {
         ]
       },
       about: {
-        title: "Why choose Novacasa for your renovation?",
+        title: "Why choose Espaireforma for your renovation?",
         subtitle: "Over 10 years specialized in renovations and solar energy in Catalonia",
         features: [
           "Certified solar panel installers",
@@ -362,21 +366,31 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {currentContent.services.items.map((service, index) => (
-              <Card key={index} className="bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg group animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-6 p-4 bg-gradient-to-br from-accent-blue/10 to-accent-purple/10 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="h-8 w-8 text-accent-blue" />
+            {currentContent.services.items.map((service, index) => {
+              const serviceImages = [solarInstallationImg, drywallInstallationImg, parquetInstallationImg, homeRenovationImg];
+              return (
+                <Card key={index} className="bg-white hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg group animate-slide-up overflow-hidden" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={serviceImages[index]} 
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <CardTitle className="text-xl text-dark-navy font-inter font-bold">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-medium-gray text-center font-inter leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardHeader className="text-center pb-4">
+                    <div className="mx-auto mb-6 p-4 bg-gradient-to-br from-accent-blue/10 to-accent-purple/10 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="h-8 w-8 text-accent-blue" />
+                    </div>
+                    <CardTitle className="text-xl text-dark-navy font-inter font-bold">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-medium-gray text-center font-inter leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -615,7 +629,7 @@ const Index = () => {
                     <div className="p-3 bg-accent-purple/10 rounded-lg">
                       <Mail className="h-6 w-6 text-accent-purple" />
                     </div>
-                    <span className="text-dark-navy font-inter font-medium">info@novacasa.cat</span>
+                    <span className="text-dark-navy font-inter font-medium">info@espaireforma.cat</span>
                   </div>
                   <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm">
                     <div className="p-3 bg-accent-green/10 rounded-lg">
@@ -654,7 +668,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-3xl font-bold text-white mb-4 font-inter">Novacasa</h3>
+              <h3 className="text-3xl font-bold text-white mb-4 font-inter">Espaireforma</h3>
               <p className="text-gray-300 mb-6 font-inter leading-relaxed max-w-md">
                 {currentContent.footer.description}
               </p>
@@ -685,7 +699,7 @@ const Index = () => {
 
           <div className="border-t border-gray-700 mt-12 pt-8 text-center">
             <p className="text-gray-400 font-inter">
-              © 2024 Novacasa. Todos los derechos reservados. Especialistas en reformas, placas solares, pladur y parquet en Cataluña.
+              © 2024 Espaireforma. Todos los derechos reservados. Especialistas en reformas, placas solares, pladur y parquet en Cataluña.
             </p>
           </div>
         </div>
