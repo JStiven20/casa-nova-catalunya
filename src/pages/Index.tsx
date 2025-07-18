@@ -84,7 +84,7 @@ const Index = () => {
         ]
       },
       about: {
-        title: "¿Por qué elegir Espaireforma para tu reforma?",
+        title: "¿Por qué elegir Nouespai para tu reforma?",
         subtitle: "Más de 10 años especializados en reformas y energía solar en Cataluña",
         features: [
           "Instaladores certificados de placas solares",
@@ -179,7 +179,7 @@ const Index = () => {
         ]
       },
       about: {
-        title: "Per què triar Espaireforma per a la teva reforma?",
+        title: "Per què triar Nouespai per a la teva reforma?",
         subtitle: "Més de 10 anys especialitzats en reformes i energia solar a Catalunya",
         features: [
           "Instal·ladors certificats de plaques solars",
@@ -274,7 +274,7 @@ const Index = () => {
         ]
       },
       about: {
-        title: "Why choose Espaireforma for your renovation?",
+        title: "Why choose Nouespai for your renovation?",
         subtitle: "Over 10 years specialized in renovations and solar energy in Catalonia",
         features: [
           "Certified solar panel installers",
@@ -629,7 +629,7 @@ const Index = () => {
                     <div className="p-3 bg-accent-purple/10 rounded-lg">
                       <Mail className="h-6 w-6 text-accent-purple" />
                     </div>
-                    <span className="text-dark-navy font-inter font-medium">info@espaireforma.cat</span>
+                    <span className="text-dark-navy font-inter font-medium">info@nouespai.cat</span>
                   </div>
                   <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm">
                     <div className="p-3 bg-accent-green/10 rounded-lg">
@@ -668,7 +668,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-3xl font-bold text-white mb-4 font-inter">Espaireforma</h3>
+              <h3 className="text-3xl font-bold text-white mb-4 font-inter">Nouespai</h3>
               <p className="text-gray-300 mb-6 font-inter leading-relaxed max-w-md">
                 {currentContent.footer.description}
               </p>
@@ -699,7 +699,7 @@ const Index = () => {
 
           <div className="border-t border-gray-700 mt-12 pt-8 text-center">
             <p className="text-gray-400 font-inter">
-              © 2024 Espaireforma. Todos los derechos reservados. Especialistas en reformas, placas solares, pladur y parquet en Cataluña.
+              © 2024 Nouespai. Todos los derechos reservados. Especialistas en reformas, placas solares, pladur y parquet en Cataluña.
             </p>
           </div>
         </div>
