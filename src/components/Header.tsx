@@ -24,7 +24,7 @@ const Header = ({ language, setLanguage, content }: HeaderProps) => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <div className="text-2xl font-bold text-dark-navy font-inter">
-                Espaireforma
+                nouespai
               </div>
             </div>
             
