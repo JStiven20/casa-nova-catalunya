@@ -39,17 +39,21 @@ Preferred communication style: Simple, everyday language.
 ## Key Components
 
 ### Database Layer
-- **ORM**: Drizzle ORM with PostgreSQL dialect
+- **ORM**: Drizzle ORM with PostgreSQL dialect optimized for Supabase
+- **Database Driver**: postgres-js for high-performance connection pooling
 - **Schema Definition**: Centralized in `shared/schema.ts` using Drizzle's schema builder
 - **Migrations**: Automated migration system with `drizzle-kit`
 - **Type Safety**: Full TypeScript integration with inferred types from schema
+- **Supabase Integration**: Direct PostgreSQL connection with transaction pooler support
 
 ### Authentication & Storage
-- **Current Implementation**: PostgreSQL database with Drizzle ORM integration
+- **Current Implementation**: Supabase PostgreSQL database with Drizzle ORM integration
+- **Database Driver**: postgres-js for optimized Supabase connection
 - **Storage Interface**: Abstracted storage layer (`IStorage`) with DatabaseStorage implementation
 - **User Management**: Basic user CRUD operations with username/password structure
 - **Contact Management**: Contact form submissions stored in database with full CRUD operations
 - **Database Schema**: Users and contact_requests tables with proper relationships
+- **Supabase Configuration**: Ready for production with connection pooling and edge functions support
 
 ### UI Components
 - **Component Library**: shadcn/ui providing accessible, customizable components
