@@ -45,10 +45,11 @@ Preferred communication style: Simple, everyday language.
 - **Type Safety**: Full TypeScript integration with inferred types from schema
 
 ### Authentication & Storage
-- **Current Implementation**: In-memory storage with interface-based design
-- **Storage Interface**: Abstracted storage layer (`IStorage`) for easy database integration
+- **Current Implementation**: PostgreSQL database with Drizzle ORM integration
+- **Storage Interface**: Abstracted storage layer (`IStorage`) with DatabaseStorage implementation
 - **User Management**: Basic user CRUD operations with username/password structure
-- **Extensibility**: Ready for PostgreSQL integration via Drizzle ORM
+- **Contact Management**: Contact form submissions stored in database with full CRUD operations
+- **Database Schema**: Users and contact_requests tables with proper relationships
 
 ### UI Components
 - **Component Library**: shadcn/ui providing accessible, customizable components
@@ -59,12 +60,13 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend Features
 - **Multi-language Support**: Spanish/English language switching
-- **Comprehensive Services**: Solar panels, drywall, custom wood furniture, carpentry, integral renovations
-- **Contact Forms**: Service inquiry and contact forms for various construction services
+- **Comprehensive Services**: Solar panels, custom wood furniture, carpentry, drywall, integral renovations, personalized design projects
+- **Contact Forms**: Fully functional contact forms with database storage and real-time validation
 - **Social Media Integration**: Facebook, Instagram, WhatsApp integration
 - **Responsive Navigation**: Mobile-optimized navigation with collapsible menu
-- **Error Handling**: 404 page with proper error logging
-- **Partnership Integration**: Services sourced from partner companies while maintaining client contact through Nouspai
+- **Error Handling**: 404 page with proper error logging and toast notifications
+- **Partnership Integration**: Services sourced from Esty Fuster carpentry company while maintaining client contact through Nouspai
+- **Form Validation**: React Hook Form with Zod validation and TanStack Query for API integration
 
 ## Data Flow
 

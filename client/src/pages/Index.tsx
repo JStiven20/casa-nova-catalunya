@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
 import { 
   Home, 
   Zap, 
@@ -42,6 +44,7 @@ const Index = () => {
     service: "",
     message: ""
   });
+  const { toast } = useToast();
 
   const content = {
     es: {
@@ -351,10 +354,48 @@ const Index = () => {
 
   const currentContent = content[language as keyof typeof content];
 
+  const contactMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Error al enviar la solicitud');
+      }
+      
+      return response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "¡Solicitud enviada!",
+        description: "Nos pondremos en contacto contigo pronto para tu proyecto.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        service: "",
+        message: ""
+      });
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "No se pudo enviar la solicitud. Inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you would typically send the data to your backend
+    contactMutation.mutate(formData);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -599,8 +640,10 @@ const Index = () => {
                       <option value="">Selecciona un servicio</option>
                       <option value="placas-solares">Instalación de Placas Solares</option>
                       <option value="pladur">Instalación de Pladur</option>
-                      <option value="parquet">Instalación de Parquet</option>
+                      <option value="muebles-madera">Muebles de Madera a Medida</option>
+                      <option value="carpinteria">Carpintería Interior y Exterior</option>
                       <option value="reforma-integral">Reforma Integral</option>
+                      <option value="diseno-personalizado">Proyectos de Diseño Personalizado</option>
                       <option value="pintura">Pintura</option>
                       <option value="mantenimiento">Mantenimiento</option>
                     </select>
@@ -621,9 +664,10 @@ const Index = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-accent-blue hover:bg-accent-blue/90 text-white py-4 rounded-xl font-inter font-semibold text-lg group"
+                    disabled={contactMutation.isPending}
+                    className="w-full bg-accent-blue hover:bg-accent-blue/90 text-white py-4 rounded-xl font-inter font-semibold text-lg group disabled:opacity-50"
                   >
-                    {currentContent.contact.form.submit}
+                    {contactMutation.isPending ? "Enviando..." : currentContent.contact.form.submit}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </form>
@@ -697,10 +741,11 @@ const Index = () => {
               <h4 className="text-lg font-bold text-white mb-6 font-inter">Servicios</h4>
               <ul className="space-y-3 text-gray-300 font-inter">
                 <li className="hover:text-white transition-colors cursor-pointer">Placas Solares</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Muebles de Madera a Medida</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Carpintería Interior y Exterior</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Instalación Pladur</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Parquet</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Reformas Integrales</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Pintura</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Diseño Personalizado</li>
               </ul>
             </div>
 
