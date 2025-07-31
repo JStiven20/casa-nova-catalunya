@@ -11,11 +11,13 @@ export const users = pgTable("users", {
 export const contactRequests = pgTable("contact_requests", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  email: text("email").notNull(),
+  email: text("email"),
   phone: text("phone").notNull(),
-  city: text("city").notNull(),
+  city: text("city"),
   service: text("service").notNull(),
   message: text("message"),
+  source: text("source").notNull().default("web"), // "web" or "whatsapp"
+  status: text("status").notNull().default("pending"), // "pending", "contacted", "completed"
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -29,7 +31,17 @@ export const insertContactRequestSchema = createInsertSchema(contactRequests).om
   createdAt: true,
 });
 
+export const insertWhatsAppContactSchema = createInsertSchema(contactRequests).omit({
+  id: true,
+  createdAt: true,
+  email: true,
+  city: true,
+}).extend({
+  source: z.literal("whatsapp"),
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContactRequest = z.infer<typeof insertContactRequestSchema>;
+export type InsertWhatsAppContact = z.infer<typeof insertWhatsAppContactSchema>;
 export type ContactRequest = typeof contactRequests.$inferSelect;

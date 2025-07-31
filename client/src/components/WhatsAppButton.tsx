@@ -2,9 +2,29 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "34XXXXXXXXX"; // Replace with actual phone number
-    const message = encodeURIComponent("Hola, quiero información sobre una reforma con Novacasa");
+  const handleWhatsAppClick = async () => {
+    const phoneNumber = "34630208375"; // Teléfono de Esty Fuster
+    const message = encodeURIComponent("Hola, vi su página web de Nouspai y me interesa información sobre sus servicios de construcción y carpintería. ¿Podrían enviarme más detalles?");
+    
+    // Registrar el contacto en la base de datos
+    try {
+      await fetch('/api/whatsapp-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: "Contacto WhatsApp",
+          phone: "Usuario contactó por WhatsApp",
+          service: "consulta-general",
+          message: "Usuario hizo clic en el botón de WhatsApp de la web",
+          source: "whatsapp"
+        }),
+      });
+    } catch (error) {
+      console.log('Error registrando contacto WhatsApp:', error);
+    }
+    
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };

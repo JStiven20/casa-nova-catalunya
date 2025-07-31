@@ -66,11 +66,13 @@ Preferred communication style: Simple, everyday language.
 - **Multi-language Support**: Spanish/English language switching
 - **Comprehensive Services**: Solar panels, custom wood furniture, carpentry, drywall, integral renovations, personalized design projects
 - **Contact Forms**: Fully functional contact forms with database storage and real-time validation
-- **Social Media Integration**: Facebook, Instagram, WhatsApp integration
+- **Social Media Integration**: Facebook, Instagram, WhatsApp integration with contact tracking
 - **Responsive Navigation**: Mobile-optimized navigation with collapsible menu
 - **Error Handling**: 404 page with proper error logging and toast notifications
 - **Partnership Integration**: Services sourced from Esty Fuster carpentry company while maintaining client contact through Nouspai
 - **Form Validation**: React Hook Form with Zod validation and TanStack Query for API integration
+- **Admin Dashboard**: Complete contact management system at /admin route
+- **WhatsApp Tracking**: Automatic registration of WhatsApp button clicks in database
 
 ## Data Flow
 

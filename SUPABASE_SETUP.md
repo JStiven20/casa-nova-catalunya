@@ -47,6 +47,20 @@ npm run db:push
 - **Monitoring**: Métricas y alertas integradas
 - **Edge Functions**: Posibilidad de funciones serverless
 
+## Sistema de Contactos Configurado
+
+✅ **Formulario Web**: Guarda automáticamente en Supabase
+✅ **WhatsApp**: Registra todos los clics en el botón de WhatsApp
+✅ **Panel Admin**: Accede a `/admin` para ver todos los contactos
+✅ **Estados**: Marca contactos como pendientes, contactados o completados
+✅ **Seguimiento**: Ve la fuente (web o WhatsApp) de cada contacto
+
+## Cómo usar el sistema
+
+1. **Ver contactos**: Ve a `tu-dominio.replit.app/admin`
+2. **Gestionar estados**: Cambia el estado de cada contacto desde el panel
+3. **Seguimiento automático**: Todos los contactos web y WhatsApp se guardan automáticamente
+
 ## Próximos pasos opcionales
 
 1. **Real-time subscriptions**: Para actualizaciones en tiempo real

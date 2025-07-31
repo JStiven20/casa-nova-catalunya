@@ -1,4 +1,4 @@
-import { users, contactRequests, type User, type InsertUser, type ContactRequest, type InsertContactRequest } from "@shared/schema";
+import { users, contactRequests, type User, type InsertUser, type ContactRequest, type InsertContactRequest, type InsertWhatsAppContact } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc } from "drizzle-orm";
 
@@ -9,9 +9,10 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  createContactRequest(request: InsertContactRequest): Promise<ContactRequest>;
+  createContactRequest(request: InsertContactRequest | InsertWhatsAppContact): Promise<ContactRequest>;
   getContactRequests(): Promise<ContactRequest[]>;
   getContactRequest(id: number): Promise<ContactRequest | undefined>;
+  updateContactStatus(id: number, status: string): Promise<ContactRequest | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -33,12 +34,21 @@ export class DatabaseStorage implements IStorage {
     return user;
   }
 
-  async createContactRequest(request: InsertContactRequest): Promise<ContactRequest> {
+  async createContactRequest(request: InsertContactRequest | InsertWhatsAppContact): Promise<ContactRequest> {
     const [contactRequest] = await db
       .insert(contactRequests)
       .values(request)
       .returning();
     return contactRequest;
+  }
+
+  async updateContactStatus(id: number, status: string): Promise<ContactRequest | undefined> {
+    const [updated] = await db
+      .update(contactRequests)
+      .set({ status })
+      .where(eq(contactRequests.id, id))
+      .returning();
+    return updated || undefined;
   }
 
   async getContactRequests(): Promise<ContactRequest[]> {
