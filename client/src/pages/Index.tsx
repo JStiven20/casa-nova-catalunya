@@ -52,9 +52,9 @@ const Index = () => {
         contact: "Contacto"
       },
       hero: {
-        title: "Especialistas en Reformas Integrales e",
-        subtitle: "Instalación de Energía Solar",
-        description: "Transformamos tu hogar con reformas completas, instalación de placas solares, pladur, parquet y pintura. Más de 10 años de experiencia en Cataluña con garantía total.",
+        title: "Especialistas en Reformas Integrales,",
+        subtitle: "Carpintería y Energía Solar",
+        description: "Transformamos tu hogar con reformas completas, muebles de madera a medida, instalación de placas solares y carpintería especializada. Más de 10 años de experiencia en Cataluña con garantía total.",
         cta: "Solicita tu presupuesto gratuito"
       },
       services: {
@@ -73,26 +73,38 @@ const Index = () => {
           },
           {
             icon: TreePine,
-            title: "Instalación, Pulido y Barnizado de Parquet",
-            description: "Instalación de parquet flotante y macizo. Pulido y barnizado profesional. Restauración de suelos de madera con acabados de alta calidad."
+            title: "Muebles de Madera a Medida",
+            description: "Diseño y fabricación de muebles personalizados en madera de alta calidad. Armarios, cocinas, estanterías y mobiliario único que refleja tu estilo personal."
+          },
+          {
+            icon: Hammer,
+            title: "Carpintería Interior y Exterior",
+            description: "Trabajos especializados en madera para interiores y exteriores. Puertas, ventanas, revestimientos, tarimas y elementos decorativos con acabados premium."
           },
           {
             icon: PaintBucket,
             title: "Reformas Integrales y Pintura",
             description: "Reformas completas de apartamentos, casas y locales comerciales. Pintura interior y exterior, albañilería, fontanería y electricidad."
+          },
+          {
+            icon: Target,
+            title: "Proyectos de Diseño Personalizado",
+            description: "Transformación completa de espacios combinando diseño moderno con artesanía tradicional. Cada proyecto adaptado a tus necesidades y presupuesto."
           }
         ]
       },
       about: {
         title: "¿Por qué elegir Nouespai para tu reforma?",
-        subtitle: "Más de 10 años especializados en reformas y energía solar en Cataluña",
+        subtitle: "Más de 10 años especializados en reformas, energía solar y carpintería en Cataluña",
         features: [
           "Instaladores certificados de placas solares",
+          "Carpinteros especializados en muebles a medida",
+          "Maestros en trabajos de madera y diseño personalizado",
           "Especialistas en pladur con acabados perfectos",
-          "Maestros en instalación y restauración de parquet",
           "Equipo completo para reformas integrales",
+          "Materiales de madera de máxima calidad y sostenibles",
           "Presupuestos detallados sin sorpresas",
-          "Garantía de 5 años en instalaciones solares",
+          "Garantía de calidad en todos nuestros trabajos",
           "Financiación personalizada disponible",
           "Servicio post-venta y mantenimiento"
         ]
@@ -108,15 +120,21 @@ const Index = () => {
           },
           {
             name: "Josep Martínez", 
-            city: "Girona",
-            service: "Pladur y Pintura",
-            text: "Hicieron toda la tabiquería de pladur de mi oficina. Trabajo impecable, rápido y con excelentes acabados."
+            city: "Sabadell",
+            service: "Muebles a Medida",
+            text: "Diseñaron y fabricaron toda la cocina en madera. La calidad es excepcional y el diseño personalizado superó nuestras expectativas."
           },
           {
             name: "Anna López",
             city: "Tarragona",
-            service: "Parquet", 
-            text: "Restauraron el parquet de toda mi casa. Quedó como nuevo, el pulido y barnizado perfecto. Muy profesionales."
+            service: "Carpintería Interior", 
+            text: "Instalaron armarios empotrados y revestimientos de madera. Trabajo artesanal de primera calidad, muy profesionales."
+          },
+          {
+            name: "David Romero",
+            city: "Girona", 
+            service: "Reforma Integral",
+            text: "Hicieron la reforma completa de mi apartamento incluyendo carpintería y pladur. Acabados perfectos y diseño espectacular."
           }
         ]
       },
@@ -134,7 +152,7 @@ const Index = () => {
         }
       },
       footer: {
-        description: "Especialistas en reformas integrales, instalación de placas solares, pladur, parquet y pintura en toda Cataluña. Calidad garantizada.",
+        description: "Especialistas en reformas integrales, carpintería de madera a medida, instalación de placas solares y diseño personalizado en toda Cataluña. Calidad garantizada.",
         contact: "Contacto",
         follow: "Síguenos"
       }
