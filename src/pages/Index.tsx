@@ -5,8 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
 import { 
   Home, 
   Zap, 
@@ -44,7 +42,6 @@ const Index = () => {
     service: "",
     message: ""
   });
-  const { toast } = useToast();
 
   const content = {
     es: {
@@ -55,9 +52,9 @@ const Index = () => {
         contact: "Contacto"
       },
       hero: {
-        title: "Especialistas en Reformas Integrales,",
-        subtitle: "Carpintería y Energía Solar",
-        description: "Transformamos tu hogar con reformas completas, muebles de madera a medida, instalación de placas solares y carpintería especializada. Más de 10 años de experiencia en Cataluña con garantía total.",
+        title: "Especialistas en Reformas Integrales e",
+        subtitle: "Instalación de Energía Solar",
+        description: "Transformamos tu hogar con reformas completas, instalación de placas solares, pladur, parquet y pintura. Más de 10 años de experiencia en Cataluña con garantía total.",
         cta: "Solicita tu presupuesto gratuito"
       },
       services: {
@@ -76,38 +73,26 @@ const Index = () => {
           },
           {
             icon: TreePine,
-            title: "Muebles de Madera a Medida",
-            description: "Diseño y fabricación de muebles personalizados en madera de alta calidad. Armarios, cocinas, estanterías y mobiliario único que refleja tu estilo personal."
-          },
-          {
-            icon: Hammer,
-            title: "Carpintería Interior y Exterior",
-            description: "Trabajos especializados en madera para interiores y exteriores. Puertas, ventanas, revestimientos, tarimas y elementos decorativos con acabados premium."
+            title: "Instalación, Pulido y Barnizado de Parquet",
+            description: "Instalación de parquet flotante y macizo. Pulido y barnizado profesional. Restauración de suelos de madera con acabados de alta calidad."
           },
           {
             icon: PaintBucket,
             title: "Reformas Integrales y Pintura",
             description: "Reformas completas de apartamentos, casas y locales comerciales. Pintura interior y exterior, albañilería, fontanería y electricidad."
-          },
-          {
-            icon: Target,
-            title: "Proyectos de Diseño Personalizado",
-            description: "Transformación completa de espacios combinando diseño moderno con artesanía tradicional. Cada proyecto adaptado a tus necesidades y presupuesto."
           }
         ]
       },
       about: {
         title: "¿Por qué elegir Nouespai para tu reforma?",
-        subtitle: "Más de 10 años especializados en reformas, energía solar y carpintería en Cataluña",
+        subtitle: "Más de 10 años especializados en reformas y energía solar en Cataluña",
         features: [
           "Instaladores certificados de placas solares",
-          "Carpinteros especializados en muebles a medida",
-          "Maestros en trabajos de madera y diseño personalizado",
           "Especialistas en pladur con acabados perfectos",
+          "Maestros en instalación y restauración de parquet",
           "Equipo completo para reformas integrales",
-          "Materiales de madera de máxima calidad y sostenibles",
           "Presupuestos detallados sin sorpresas",
-          "Garantía de calidad en todos nuestros trabajos",
+          "Garantía de 5 años en instalaciones solares",
           "Financiación personalizada disponible",
           "Servicio post-venta y mantenimiento"
         ]
@@ -123,21 +108,15 @@ const Index = () => {
           },
           {
             name: "Josep Martínez", 
-            city: "Sabadell",
-            service: "Muebles a Medida",
-            text: "Diseñaron y fabricaron toda la cocina en madera. La calidad es excepcional y el diseño personalizado superó nuestras expectativas."
+            city: "Girona",
+            service: "Pladur y Pintura",
+            text: "Hicieron toda la tabiquería de pladur de mi oficina. Trabajo impecable, rápido y con excelentes acabados."
           },
           {
             name: "Anna López",
             city: "Tarragona",
-            service: "Carpintería Interior", 
-            text: "Instalaron armarios empotrados y revestimientos de madera. Trabajo artesanal de primera calidad, muy profesionales."
-          },
-          {
-            name: "David Romero",
-            city: "Girona", 
-            service: "Reforma Integral",
-            text: "Hicieron la reforma completa de mi apartamento incluyendo carpintería y pladur. Acabados perfectos y diseño espectacular."
+            service: "Parquet", 
+            text: "Restauraron el parquet de toda mi casa. Quedó como nuevo, el pulido y barnizado perfecto. Muy profesionales."
           }
         ]
       },
@@ -155,7 +134,7 @@ const Index = () => {
         }
       },
       footer: {
-        description: "Especialistas en reformas integrales, carpintería de madera a medida, instalación de placas solares y diseño personalizado en toda Cataluña. Calidad garantizada.",
+        description: "Especialistas en reformas integrales, instalación de placas solares, pladur, parquet y pintura en toda Cataluña. Calidad garantizada.",
         contact: "Contacto",
         follow: "Síguenos"
       }
@@ -354,48 +333,10 @@ const Index = () => {
 
   const currentContent = content[language as keyof typeof content];
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: typeof formData) => {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Error al enviar la solicitud');
-      }
-      
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "¡Solicitud enviada!",
-        description: "Nos pondremos en contacto contigo pronto para tu proyecto.",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        city: "",
-        service: "",
-        message: ""
-      });
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "No se pudo enviar la solicitud. Inténtalo de nuevo.",
-        variant: "destructive",
-      });
-    },
-  });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    contactMutation.mutate(formData);
+    console.log("Form submitted:", formData);
+    // Here you would typically send the data to your backend
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -640,10 +581,8 @@ const Index = () => {
                       <option value="">Selecciona un servicio</option>
                       <option value="placas-solares">Instalación de Placas Solares</option>
                       <option value="pladur">Instalación de Pladur</option>
-                      <option value="muebles-madera">Muebles de Madera a Medida</option>
-                      <option value="carpinteria">Carpintería Interior y Exterior</option>
+                      <option value="parquet">Instalación de Parquet</option>
                       <option value="reforma-integral">Reforma Integral</option>
-                      <option value="diseno-personalizado">Proyectos de Diseño Personalizado</option>
                       <option value="pintura">Pintura</option>
                       <option value="mantenimiento">Mantenimiento</option>
                     </select>
@@ -664,10 +603,9 @@ const Index = () => {
 
                   <Button 
                     type="submit" 
-                    disabled={contactMutation.isPending}
-                    className="w-full bg-accent-blue hover:bg-accent-blue/90 text-white py-4 rounded-xl font-inter font-semibold text-lg group disabled:opacity-50"
+                    className="w-full bg-accent-blue hover:bg-accent-blue/90 text-white py-4 rounded-xl font-inter font-semibold text-lg group"
                   >
-                    {contactMutation.isPending ? "Enviando..." : currentContent.contact.form.submit}
+                    {currentContent.contact.form.submit}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </form>
@@ -741,11 +679,10 @@ const Index = () => {
               <h4 className="text-lg font-bold text-white mb-6 font-inter">Servicios</h4>
               <ul className="space-y-3 text-gray-300 font-inter">
                 <li className="hover:text-white transition-colors cursor-pointer">Placas Solares</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Muebles de Madera a Medida</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Carpintería Interior y Exterior</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Instalación Pladur</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Parquet</li>
                 <li className="hover:text-white transition-colors cursor-pointer">Reformas Integrales</li>
-                <li className="hover:text-white transition-colors cursor-pointer">Diseño Personalizado</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Pintura</li>
               </ul>
             </div>
 
